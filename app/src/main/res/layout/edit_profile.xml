@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_person1_24"
+        android:id="@+id/person1"
+        android:padding="3dp">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_person1_24"
+        android:id="@+id/person2"
+        android:layout_below="@id/person1"
+        android:padding="3dp">
+
+    </ImageView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_email_24"
+        android:id="@+id/email"
+        android:layout_below="@id/person2"
+        android:padding="3dp">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text1"
+        android:text="Name"
+        android:textColor="#4B83E5"
+        android:layout_alignBottom="@id/person1"
+        android:textSize="18dp"
+        android:layout_toRightOf="@id/person1">
+
+    </TextView>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/text1"
+        android:text="Milos"
+        android:layout_alignTop="@id/person1"
+        android:textColor="#4B83E5"
+        android:textSize="18dp">
+
+    </EditText>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@id/text2"
+        android:text="Lastname"
+        android:layout_below="@id/person1"
+        android:textColor="#4B83E5"
+        android:textSize="18dp"
+        android:layout_toRightOf="@id/person2">
+
+    </TextView>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mikalacki"
+        android:layout_toRightOf="@id/text2"
+        android:layout_below="@id/person1"
+        android:textColor="#4B83E5"
+        android:textSize="18dp">
+        ></EditText>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Mail"
+        android:layout_below="@id/person2"
+        android:textColor="#4B83E5"
+        android:textSize="18dp"
+        android:layout_toRightOf="@id/person1">
+
+    </TextView>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/person2"
+        android:layout_toRightOf="@id/text2"
+        android:text="milosmikalacki@gmail.com"
+        android:textColor="#4B83E5"
+        android:textSize="18dp">
+
+    </EditText>
+
+    </RelativeLayout>
+
+</RelativeLayout>
