@@ -68,6 +68,8 @@ public class LogIn extends AppCompatActivity {
                             String[] data = new String[2];
                             data[0] = username;
                             data[1] = password;
+                            // 192.168.1.59 ip address for pc
+                            // 192.168.2.252 ip address for phone
                             PutData putData = new PutData("http://192.168.1.59/LoginRegister/login.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {

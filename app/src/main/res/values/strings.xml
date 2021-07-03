@@ -11,4 +11,6 @@
     <string name="loginSign">Login</string>
     <string name="loginBtn">login</string>
     <string name="signup">New here? <u>Sign up now!</u></string>
+    <string name="log_out">log out</string>
+    <string name="edit_profile">Edit profile</string>
 </resources>
