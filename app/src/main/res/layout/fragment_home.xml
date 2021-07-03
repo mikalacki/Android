@@ -1,60 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:id="@+id/home"
-    android:backgroundTint="@color/black"
-    android:foregroundTint="@color/black">
-
-
-    <include
-        layout="@layout/header_home"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-
-    </include>
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_height="match_parent"
+
         android:orientation="vertical"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:id="@+id/picture">
+        tools:context=".MainActivity"
+        android:id="@+id/home"
+        android:backgroundTint="@color/black"
+        android:foregroundTint="@color/black">
+
+        <include
+            layout="@layout/header_home"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+        </include>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:id="@+id/picture">
 
 
 
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"
-        >
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher"
+                >
 
-    </com.mikhaellopez.circularimageview.CircularImageView>
+            </com.mikhaellopez.circularimageview.CircularImageView>
 
+        </LinearLayout>
+        <include
+            layout="@layout/info"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            >
+        </include>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_edit"
+            android:text="Edit profile"
+            app:backgroundTint="#4B83E5"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            >
+
+        </Button>
     </LinearLayout>
-    <include
-        layout="@layout/info"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        >
-    </include>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_edit"
-        android:text="Edit profile"
-        app:backgroundTint="#4B83E5"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        >
+</ScrollView>
 
-    </Button>
-</LinearLayout>
+
+
