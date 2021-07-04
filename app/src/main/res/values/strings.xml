@@ -2,7 +2,7 @@
     <string name="app_name">MMReviews</string>
     <string name="title_activity_maps">Map</string>
     <string name="loginhere">Already have an account? <u>Login!</u></string>
-    <string name="username">username</string>
+    <string name="username">Username</string>
     <string name="fullname">Full name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -13,4 +13,6 @@
     <string name="signup">New here? <u>Sign up now!</u></string>
     <string name="log_out">log out</string>
     <string name="edit_profile">Edit profile</string>
+    <string name="full_name">Full name</string>
+    <string name="override">override</string>
 </resources>

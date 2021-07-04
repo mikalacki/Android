@@ -18,7 +18,7 @@ public class LogIn extends AppCompatActivity {
 
     TextInputEditText textInputEditTextPassword,textInputEditTextUsername;
     TextView textViewSignup;
-    Button buttonLogin;
+    Button buttonLogin, buttonOverride;
     ProgressBar progressBar;
 
     @Override
@@ -27,10 +27,21 @@ public class LogIn extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
 
         textInputEditTextUsername = findViewById(R.id.usernameLogin);
-        TextInputEditText textInputEditTextPassword = findViewById(R.id.passwordLogin);
+        textInputEditTextPassword = findViewById(R.id.passwordLogin);
         buttonLogin = findViewById(R.id.btn_login);
         textViewSignup = findViewById(R.id.signupText);
         progressBar = findViewById(R.id.progressBar);
+
+        buttonOverride = findViewById(R.id.btn_override);
+
+        buttonOverride.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         textViewSignup.setOnClickListener(new View.OnClickListener() {
             @Override
