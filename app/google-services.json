@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "1020999946406",
-    "project_id": "mmreviews-bf0f6",
-    "storage_bucket": "mmreviews-bf0f6.appspot.com"
+    "project_number": "509529035263",
+    "firebase_url": "https://mmreviews-111d6-default-rtdb.firebaseio.com",
+    "project_id": "mmreviews-111d6",
+    "storage_bucket": "mmreviews-111d6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1020999946406:android:bed368c586f991f88fa467",
+        "mobilesdk_app_id": "1:509529035263:android:38e4c78ba17d3fb70a97ca",
         "android_client_info": {
           "package_name": "com.example.mmreviews"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1020999946406-2cgdcurp1kfobqqifocke4u09325q3vn.apps.googleusercontent.com",
+          "client_id": "509529035263-bo8569trn0jctknnu8041fpejnig55ji.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDvtNsPa4b76-uFE5hBuxf-O0Kh-SGhWAg"
+          "current_key": "AIzaSyCuGD4yITsfQjtNcVKEbRoYxwIWKmvSTQE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1020999946406-2cgdcurp1kfobqqifocke4u09325q3vn.apps.googleusercontent.com",
+              "client_id": "509529035263-bo8569trn0jctknnu8041fpejnig55ji.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
