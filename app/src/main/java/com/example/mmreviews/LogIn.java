@@ -57,10 +57,6 @@ public class LogIn extends AppCompatActivity {
 
         buttonOverride = findViewById(R.id.btn_override);
 
-        final TextView textViewUsernameInfo = (TextView) findViewById(R.id.username);
-        textViewUsernameInfo.setText("Some text");
-
-
         buttonOverride.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
