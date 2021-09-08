@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.ActionCodeSettings;
 import com.mopub.volley.Request;
 import com.mopub.volley.Response;
 import com.mopub.volley.VolleyError;
@@ -44,29 +45,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-                    switch (item.getItemId()){
-                        case R.id.nav_home:
-                            selectedFragment = new HomeFragment();
-                            break;
-                        case R.id.nav_search:
-                            selectedFragment = new SearchFragment();
-                            break;
-                        case R.id.nav_map:
-                            selectedFragment = new MapFragment();
-                            break;
-                        case R.id.nav_notifications:
-                            selectedFragment = new NotificationFragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
-                    return true;
+            item -> {
+                Fragment selectedFragment = null;
+                switch (item.getItemId()){
+                    case R.id.nav_home:
+                        selectedFragment = new HomeFragment();
+                        break;
+                    case R.id.nav_search:
+                        selectedFragment = new SearchFragment();
+                        break;
+                    case R.id.nav_map:
+                        selectedFragment = new MapFragment();
+                        break;
+                    case R.id.nav_notifications:
+                        selectedFragment = new NotificationFragment();
+                        break;
                 }
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+                return true;
             };
-
 
 
 }

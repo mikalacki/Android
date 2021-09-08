@@ -1,7 +1,6 @@
 package com.example.mmreviews;
 
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -47,23 +46,23 @@ public class SignUp extends AppCompatActivity {
 
         DAOUser daoUser = new DAOUser();
 
-       buttonRegister.setOnClickListener(v ->
-       {
-               User user = new User(textInputEditTextUsername.getText().toString(),
-                       textInputEditTextFullname.getText().toString(),
-                       textInputEditTextEmail.getText().toString(),
-                       textInputEditTextPassword.getText().toString());
-               daoUser.add(user).addOnSuccessListener(suc ->
-                       {
-                           Toast.makeText(this, "Record inserted", Toast.LENGTH_SHORT).show();
-                       }
-                       ).addOnFailureListener(er ->
-                       {
-                           Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
+        buttonRegister.setOnClickListener(v ->
+        {
+            User user = new User(textInputEditTextUsername.getText().toString(),
+                    textInputEditTextFullname.getText().toString(),
+                    textInputEditTextEmail.getText().toString(),
+                    textInputEditTextPassword.getText().toString());
+            daoUser.add(user).addOnSuccessListener(suc ->
+                    {
+                        Toast.makeText(this, "Record inserted", Toast.LENGTH_SHORT).show();
+                    }
+            ).addOnFailureListener(er ->
+                    {
+                        Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
 
-                       }
-                       );
-       });
+                    }
+            );
+        });
 
-}
+    }
 }
