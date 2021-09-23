@@ -8,8 +8,6 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
-import android.view.View;
-
 import android.widget.Button;
 
 import android.widget.ProgressBar;
@@ -70,10 +68,10 @@ public class LogIn extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(LogIn.this, "user loged in", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogIn.this, "User loged in", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     } else {
-                        Toast.makeText(LogIn.this, "Error " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogIn.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
