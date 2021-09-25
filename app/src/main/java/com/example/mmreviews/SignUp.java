@@ -51,10 +51,11 @@ public class SignUp extends AppCompatActivity {
             finish();
         });
 
-        DAOUser daoUser = new DAOUser();
+
 
         buttonRegister.setOnClickListener(v ->
         {
+
             String username =textInputEditTextUsername.getText().toString().trim();
             String fullname = textInputEditTextFullname.getText().toString().trim();
             String email = textInputEditTextEmail.getText().toString().trim();

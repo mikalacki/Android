@@ -15,4 +15,8 @@
     <string name="edit_profile">Edit profile</string>
     <string name="full_name">Full name</string>
     <string name="override">override</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_fullname">New fullname</string>
+    <string name="new_username">New username</string>
 </resources>

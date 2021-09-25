@@ -1,132 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:layout_centerInParent="true"
->
+    android:layout_width="match_parent"
+    tools:context=".EditFragment">
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:paddingTop="20dp">
+        android:layout_height="wrap_content"
 
-        <ImageView
-            android:id="@+id/person1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:src="@drawable/ic_baseline_person1_24">
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        android:id="@+id/home"
+        >
 
-        </ImageView>
+    <include
+        layout="@layout/header_edit"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
-        <ImageView
-            android:id="@+id/person2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/person1"
-            android:padding="3dp"
-            android:src="@drawable/ic_baseline_person1_24">
+    </include>
 
-        </ImageView>
+    <include
+        layout="@layout/edit_profile_info"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp">
 
-        <ImageView
-            android:id="@+id/emailIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/person2"
-            android:padding="3dp"
-            android:src="@drawable/ic_baseline_email_24">
+    </include>
 
-        </ImageView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUpdate"
+        android:text="@string/update"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCancel"
+        android:layout_gravity="center"
+        android:layout_margin="20dp">
 
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/person1"
-            android:layout_toRightOf="@id/person1"
-            android:text="Name"
-            android:textColor="#4B83E5"
-            android:textSize="18dp">
+    </Button>
 
-        </TextView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCancel"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/cancel"
+        android:layout_gravity="center"
+        android:layout_margin="20dp">
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/person1"
-            android:layout_toRightOf="@id/text1"
-            android:text="Milos"
-            android:textColor="#4B83E5"
-            android:textSize="18dp">
+    </Button>
+    </LinearLayout>
 
-        </EditText>
-
-        <TextView
-            android:id="@id/text2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/person1"
-            android:layout_toRightOf="@id/person2"
-            android:text="Lastname"
-            android:textColor="#4B83E5"
-            android:textSize="18dp">
-
-        </TextView>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/person1"
-            android:layout_toRightOf="@id/text2"
-            android:text="Mikalacki"
-            android:textColor="#4B83E5"
-            android:textSize="18dp">
-            </EditText>
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/person2"
-            android:layout_toRightOf="@id/person1"
-            android:text="Mail"
-            android:textColor="#4B83E5"
-            android:textSize="18dp">
-
-        </TextView>
-
-        <EditText
-            android:id="@+id/emailedit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/btn_save"
-            android:layout_below="@id/person2"
-            android:layout_marginBottom="-25dp"
-            android:layout_toRightOf="@id/text2"
-            android:text="milosmikalacki@gmail.com"
-            android:textColor="#4B83E5"
-            android:textSize="18dp"
-            >
-
-        </EditText>
-
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/emailIcon"
-            android:layout_margin="20dp"
-            android:text="save">
-
-        </Button>
-
-    </RelativeLayout>
-
-
-</RelativeLayout>
+</ScrollView>

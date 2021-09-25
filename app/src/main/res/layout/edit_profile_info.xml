@@ -1,0 +1,118 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    >
+    <ImageView
+        android:id="@+id/person1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_person1_24">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/person2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/person1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_person1_24">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/emailIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/person2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="5dp"
+        android:src="@drawable/ic_baseline_email_24">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/person2"
+        android:text="@string/username"
+        android:padding="3dp"
+        android:textColor="#4B83E5"
+        android:textSize="18dp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/usernameEdit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/person1"
+        app:layout_constraintLeft_toRightOf="@id/text1"
+        android:textColor="#4B83E5"
+        android:textSize="18sp"
+        android:inputType="text">
+
+    </EditText>
+
+
+    <TextView
+        android:id="@id/text2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/person1"
+        app:layout_constraintLeft_toRightOf="@id/person2"
+        app:layout_constraintTop_toBottomOf="@id/person1"
+        android:text="@string/full_name"
+        android:textColor="#4B83E5"
+        android:textSize="18sp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/fullNameEdit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/person1"
+        app:layout_constraintLeft_toRightOf="@id/text1"
+        app:layout_constraintBottom_toBottomOf="@id/person2"
+        android:textColor="#4B83E5"
+        android:textSize="16sp"
+        android:importantForAutofill="no"
+        android:inputType="text">
+
+
+    </EditText>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/person2"
+        app:layout_constraintLeft_toRightOf="@id/person2"
+        app:layout_constraintTop_toBottomOf="@id/person2"
+        android:text="@string/email"
+        android:textColor="#4B83E5"
+        android:textSize="18sp">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/emailEdit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/text1"
+        app:layout_constraintBottom_toBottomOf="@id/emailIcon"
+        android:inputType="textEmailAddress"
+        android:textColor="#4B83E5"
+        android:textSize="16sp">
+
+    </EditText>
+</androidx.constraintlayout.widget.ConstraintLayout>

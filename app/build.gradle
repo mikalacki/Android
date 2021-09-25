@@ -1,4 +1,7 @@
+plugins{
+//    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 
+}
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
@@ -42,7 +45,9 @@ android {
     viewBinding {
         enabled true
     }
+
 }
+
 
 dependencies {
 
@@ -67,4 +72,5 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation 'com.mikhaellopez:circularimageview:4.2.0'
     implementation 'com.android.support:multidex:1.0.3'
+
 }
