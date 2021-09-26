@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    tools:context=".HomeFragment">
+    android:layout_width="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,26 +23,32 @@
 
         </include>
 
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="center"
-            android:id="@+id/pictureProfile"
-            android:src="@mipmap/ic_launcher"
-            android:layout_margin="20dp">
-        </com.mikhaellopez.circularimageview.CircularImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:id="@+id/picture">
 
 
 
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher"
+                >
+
+            </com.mikhaellopez.circularimageview.CircularImageView>
+
+        </LinearLayout>
         <include
             layout="@layout/info"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="30dp">
-
+            >
         </include>
 
         <Button
@@ -51,18 +56,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_edit"
             android:text="@string/edit_profile"
-            app:backgroundTint="#4B83E5"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            >
-
-        </Button>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_edit_picture"
-            android:text="@string/edit_picture"
             app:backgroundTint="#4B83E5"
             android:layout_gravity="center"
             android:layout_margin="20dp"
@@ -81,8 +74,6 @@
             >
 
         </Button>
-
-
     </LinearLayout>
 
 </ScrollView>

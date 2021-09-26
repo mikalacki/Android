@@ -19,4 +19,5 @@
     <string name="cancel">Cancel</string>
     <string name="new_fullname">New fullname</string>
     <string name="new_username">New username</string>
+    <string name="edit_picture">Edit picture</string>
 </resources>

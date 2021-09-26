@@ -88,16 +88,12 @@ public class SignUp extends AppCompatActivity {
 
             progressBar.setVisibility(View.VISIBLE);
 
-            fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        FirebaseDatabase.getInstance().getReference("Users")
-                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()){
+            fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+                if(task.isSuccessful()){
+                    FirebaseDatabase.getInstance().getReference("Users")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            .setValue(user).addOnCompleteListener(task1 -> {
+                                if (task1.isSuccessful()){
                                     Toast.makeText(SignUp.this, "User has been registered successfully", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.VISIBLE);
                                     Intent intent = new Intent(getApplicationContext(), LogIn.class);
@@ -108,13 +104,11 @@ public class SignUp extends AppCompatActivity {
                                     Toast.makeText(SignUp.this, "Failed to register! Try again!", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.GONE);
                                 }
-                            }
-                        });
-                    }
-                    else{
-                        Toast.makeText(SignUp.this, "Failed to register! Try again!", Toast.LENGTH_SHORT).show();
-                        progressBar.setVisibility(View.GONE);
-                    }
+                            });
+                }
+                else{
+                    Toast.makeText(SignUp.this, "Failed to register! Try again!", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             });
         });

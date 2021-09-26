@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ public class HomeFragment extends Fragment {
 
     private FirebaseUser user;
     private DatabaseReference reference;
-
+    private Button btnLogout, btnEdit;
     private String userID;
 
 
@@ -38,9 +39,11 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        view.findViewById(R.id.btn_edit).setOnClickListener(v -> getFragmentManager().beginTransaction().replace(R.id.fragment_container, new EditFragment()).commit());
+        btnLogout = view.findViewById(R.id.btn_logout);
+        btnEdit = view.findViewById(R.id.btn_edit);
 
-        view.findViewById(R.id.btn_logout).setOnClickListener(v -> {
+
+        btnLogout.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), LogIn.class);
             startActivity(intent);
 
@@ -54,6 +57,8 @@ public class HomeFragment extends Fragment {
         final TextView fullNameTextView = (TextView) view.findViewById(R.id.fullNameProfile);
         final TextView usernameTextView = (TextView) view.findViewById(R.id.usernameProfile);
         final TextView emailTextView = (TextView) view.findViewById(R.id.emailProfile);
+
+
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -75,6 +80,33 @@ public class HomeFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+        });
+
+        btnEdit.setOnClickListener(v -> {
+            reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    User userProfile = snapshot.getValue(User.class);
+
+                    if (userProfile != null) {
+                        String fullName = userProfile.getFullName();
+                        String username = userProfile.getUsername();
+                        String email = userProfile.getEmail();
+
+                        Intent intent = new Intent(getActivity(), EditActivity.class);
+                        intent.putExtra("username", username);
+                        intent.putExtra("fullname", fullName);
+                        intent.putExtra("email", email);
+                        startActivity(intent);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
         });
 
         return view;
