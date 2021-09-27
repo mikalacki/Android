@@ -2,7 +2,9 @@ package com.example.mmreviews;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,14 +23,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class HomeFragment extends Fragment {
 
-    private FirebaseUser user;
     private DatabaseReference reference;
-    private Button btnLogout, btnEdit;
     private String userID;
-
 
 
     public HomeFragment() {
@@ -39,24 +39,17 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        btnLogout = view.findViewById(R.id.btn_logout);
-        btnEdit = view.findViewById(R.id.btn_edit);
+        Button btnLogout = view.findViewById(R.id.btn_logout);
+        Button btnEdit = view.findViewById(R.id.btn_edit);
 
 
-        btnLogout.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), LogIn.class);
-            startActivity(intent);
-
-        });
-
-
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextView fullNameTextView = (TextView) view.findViewById(R.id.fullNameProfile);
-        final TextView usernameTextView = (TextView) view.findViewById(R.id.usernameProfile);
-        final TextView emailTextView = (TextView) view.findViewById(R.id.emailProfile);
+        final TextView fullNameTextView = view.findViewById(R.id.fullNameProfile);
+        final TextView usernameTextView = view.findViewById(R.id.usernameProfile);
+        final TextView emailTextView = view.findViewById(R.id.emailProfile);
 
 
 
@@ -109,6 +102,14 @@ public class HomeFragment extends Fragment {
 
         });
 
+        btnLogout.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getActivity(), LogIn.class));
+            getActivity().finish();
+        });
+
         return view;
     }
+
+
 }

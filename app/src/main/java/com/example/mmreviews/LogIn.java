@@ -29,7 +29,7 @@ public class LogIn extends AppCompatActivity {
 
     TextInputEditText textInputEditTextPassword, textInputEditTextEmail;
     TextView textViewSignup;
-    Button buttonLogin, buttonOverride;
+    Button buttonLogin;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
 
@@ -47,14 +47,6 @@ public class LogIn extends AppCompatActivity {
         textViewSignup = findViewById(R.id.signupText);
         progressBar = findViewById(R.id.progressBar);
 
-        buttonOverride = findViewById(R.id.btn_override);
-
-        buttonOverride.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
-        });
-
         textViewSignup.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), SignUp.class);
             startActivity(intent);
@@ -70,6 +62,7 @@ public class LogIn extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Toast.makeText(LogIn.this, "User loged in", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
                     } else {
                         Toast.makeText(LogIn.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }

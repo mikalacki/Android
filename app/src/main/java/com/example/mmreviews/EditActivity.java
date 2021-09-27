@@ -90,7 +90,7 @@ public class EditActivity extends AppCompatActivity {
                             finish();
                         }
                     });
-                    Toast.makeText(EditActivity.this, "Email is changed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditActivity.this, "Profile has been updated", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(e -> Toast.makeText(EditActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show());
 
 

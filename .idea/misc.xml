@@ -7,11 +7,13 @@
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.2046875" />
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.365625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/activity_place_card.xml" value="0.2526041666666667" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="app/src/main/res/layout/edit_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/edit_profile_info.xml" value="0.365625" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.23541666666666666" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/layout/header_edit.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/layout/header_home.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/layout/info.xml" value="0.5" />

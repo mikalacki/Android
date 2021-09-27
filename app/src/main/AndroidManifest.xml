@@ -23,6 +23,9 @@
         android:theme="@style/Theme.MMReviews"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".PlaceCard"
+            android:exported="true" />
+        <activity
             android:name=".EditActivity"
             android:exported="true" />
         <activity
@@ -46,8 +49,8 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBrMKegKdBUux7lqesVWXDX5_esR_XGQVU" />
 
         <activity android:name=".MainActivity" />
     </application>
