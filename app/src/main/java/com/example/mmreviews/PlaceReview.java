@@ -3,22 +3,31 @@ package com.example.mmreviews;
 public class PlaceReview {
 
     String placeName;
-    int r, reviewNumber;
-    float avarage;
+    int reviewNumber;
+    float r, avarage;
     String user;
     String comment;
-    int likeNo, dislikeNo; //treba implementirati
+    int likeNo; //treba implementirati
 
     public PlaceReview(){
 
     }
-    public PlaceReview(String name, int r, int reviewNumber, float avarage, String user, String comment) {
+    public PlaceReview(String name, float r, int reviewNumber, float avarage, String user, String comment, int likeNo) {
         this.placeName = name;
         this.r = r;
         this.reviewNumber = reviewNumber;
         this.avarage = avarage;
         this.user = user;
         this.comment = comment;
+        this.likeNo = likeNo;
+    }
+
+    public int getLikeNo() {
+        return likeNo;
+    }
+
+    public void setLikeNo(int likeNo) {
+        this.likeNo = likeNo;
     }
 
     public String getComment() {
@@ -37,11 +46,11 @@ public class PlaceReview {
         this.placeName = placeName;
     }
 
-    public int getR() {
+    public float getR() {
         return r;
     }
 
-    public void setR(int r) {
+    public void setR(float r) {
         this.r = r;
     }
 

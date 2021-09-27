@@ -23,6 +23,9 @@
         android:theme="@style/Theme.MMReviews"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AddComment"
+            android:exported="true" />
+        <activity
             android:name=".PlaceCard"
             android:exported="true" />
         <activity

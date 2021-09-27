@@ -21,4 +21,15 @@
     <string name="new_username">New username</string>
     <string name="edit_picture">Edit picture</string>
     <string name="default_info_snippet" />
+    <string name="place_information">Place Information</string>
+    <string name="place_name">Place name</string>
+    <string name="reviews">Reviews</string>
+    <string name="user">User:</string>
+    <string name="comment">Comment:</string>
+    <string name="like">Like</string>
+    <string name="dislike">dislike</string>
+    <string name="add_comment">Add Comment</string>
+    <string name="your_comment">Your comment</string>
+    <string name="add">add</string>
+    <string name="rating">Rating:</string>
 </resources>

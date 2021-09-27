@@ -1,10 +1,9 @@
 package com.example.mmreviews;
 
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
 import static android.app.Activity.RESULT_OK;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,30 +15,26 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
-import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse;
-import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 
-import org.w3c.dom.Text;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class SearchFragment extends Fragment {
 
     EditText search;
     Button btnCard;
+
+    public SearchFragment() {
+    }
 
     @Nullable
     @Override
@@ -60,6 +55,7 @@ public class SearchFragment extends Fragment {
 
                 Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fieldList).build(getActivity());
                 startActivityForResult(intent, 100);
+
             }
         });
 
@@ -75,11 +71,14 @@ public class SearchFragment extends Fragment {
             search.setText(place.getAddress());
             btnCard.setText(place.getName());
 
+
             btnCard.setOnClickListener(v -> {
                 Intent intent = new Intent(getActivity(), PlaceCard.class);
                 intent.putExtra("placeName", place.getName());
                 startActivity(intent);
             });
+            btnCard.setVisibility(View.VISIBLE);
+
         } else if(resultCode == AutocompleteActivity.RESULT_ERROR){
             Status status = Autocomplete.getStatusFromIntent(data);
             Toast.makeText(getContext(),status.getStatusMessage(), Toast.LENGTH_SHORT).show();
