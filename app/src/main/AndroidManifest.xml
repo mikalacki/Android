@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mmreviews">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -10,7 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="your.package.name.permission.MAPS_RECEIVE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -23,16 +24,16 @@
         android:theme="@style/Theme.MMReviews"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".AddComment"
+            android:name=".AddCommentActivity"
             android:exported="true" />
         <activity
-            android:name=".PlaceCard"
+            android:name=".PlaceReviewsActivity"
             android:exported="true" />
         <activity
             android:name=".EditActivity"
             android:exported="true" />
         <activity
-            android:name=".LogIn"
+            android:name=".LogInActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,8 +41,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".Services.MyFireBaseMessagingService"
+            android:permission="TODO"
+            android:exported="true"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity
-            android:name=".SignUp"
+            android:name=".SignUpActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -52,10 +62,20 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_baseline_notifications_24" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/black" />
+        <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBrMKegKdBUux7lqesVWXDX5_esR_XGQVU" />
 
         <activity android:name=".MainActivity" />
     </application>
+
+
 
 </manifest>

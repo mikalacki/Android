@@ -45,7 +45,7 @@
 
         </LinearLayout>
         <include
-            layout="@layout/info"
+            layout="@layout/information_layout"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             >

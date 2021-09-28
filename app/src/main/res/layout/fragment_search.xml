@@ -18,20 +18,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/search"
-        android:hint="Enter place"
+        android:hint="@string/enter_place"
         android:padding="16dp"
         android:drawablePadding="16dp"
         android:drawableLeft="@drawable/ic_baseline_location_on_24"
         android:gravity="center_vertical"
         android:background="@android:drawable/editbox_background"
-        >
+        android:drawableStart="@drawable/ic_baseline_location_on_24">
 
     </EditText>
 
     <Button
         android:id="@+id/btnCard"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:layout_marginTop="20dp"
         android:text=""
         android:textSize="30dp"

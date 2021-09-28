@@ -1,7 +1,7 @@
 package com.example.mmreviews;
 
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,15 +15,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class SignUp extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     TextInputEditText textInputEditTextFullname, textInputEditTextUsername, textInputEditTextPassword, textInputEditTextEmail;
     Button buttonRegister;
@@ -46,7 +44,7 @@ public class SignUp extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
 
         textViewLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), LogIn.class);
+            Intent intent = new Intent(getApplicationContext(), LogInActivity.class);
             startActivity(intent);
             finish();
         });
@@ -56,7 +54,7 @@ public class SignUp extends AppCompatActivity {
         buttonRegister.setOnClickListener(v ->
         {
 
-            String username =textInputEditTextUsername.getText().toString().trim();
+            String username = textInputEditTextUsername.getText().toString().trim();
             String fullname = textInputEditTextFullname.getText().toString().trim();
             String email = textInputEditTextEmail.getText().toString().trim();
             String password = textInputEditTextPassword.getText().toString();
@@ -94,20 +92,21 @@ public class SignUp extends AppCompatActivity {
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(task1 -> {
                                 if (task1.isSuccessful()){
-                                    Toast.makeText(SignUp.this, "User has been registered successfully", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpActivity.this, "User has been registered successfully", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.VISIBLE);
-                                    Intent intent = new Intent(getApplicationContext(), LogIn.class);
+
+                                    Intent intent = new Intent(getApplicationContext(), LogInActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
                                 else{
-                                    Toast.makeText(SignUp.this, "Failed to register! Try again!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpActivity.this, "Failed to register! Try again!", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.GONE);
                                 }
                             });
                 }
                 else{
-                    Toast.makeText(SignUp.this, "Failed to register! Try again!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "Failed to register! Try again!", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
             });

@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,15 +47,12 @@ public class SearchFragment extends Fragment {
         Places.initialize(getContext(), "AIzaSyBrMKegKdBUux7lqesVWXDX5_esR_XGQVU");
 
         search.setFocusable(false);
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<Place.Field> fieldList = Arrays.asList(Place.Field.NAME);
+        search.setOnClickListener(v -> {
+            List<Place.Field> fieldList = Arrays.asList(Place.Field.NAME);
 
-                Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fieldList).build(getActivity());
-                startActivityForResult(intent, 100);
+            Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fieldList).build(getActivity());
+            startActivityForResult(intent, 100);
 
-            }
         });
 
         return view;
@@ -66,6 +62,7 @@ public class SearchFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == RESULT_OK){
+            assert data != null;
             Place place = Autocomplete.getPlaceFromIntent(data);
 
             search.setText(place.getAddress());
@@ -73,7 +70,7 @@ public class SearchFragment extends Fragment {
 
 
             btnCard.setOnClickListener(v -> {
-                Intent intent = new Intent(getActivity(), PlaceCard.class);
+                Intent intent = new Intent(getActivity(), PlaceReviewsActivity.class);
                 intent.putExtra("placeName", place.getName());
                 startActivity(intent);
             });

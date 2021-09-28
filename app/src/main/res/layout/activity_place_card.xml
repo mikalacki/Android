@@ -39,7 +39,8 @@
                 android:id="@+id/placeName"
                 android:textSize="20sp"
                 android:textColor="#4B83E5"
-                android:text="">
+                android:text=""
+                android:paddingStart="30sp">
 
             </TextView>
 
@@ -69,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardList"
-                tools:listitem="@layout/card"
+                tools:listitem="@layout/review_item"
                 >
 
             </androidx.recyclerview.widget.RecyclerView>

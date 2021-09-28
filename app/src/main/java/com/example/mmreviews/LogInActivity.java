@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import org.jetbrains.annotations.NotNull;
 
 
-public class LogIn extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
 
     TextInputEditText textInputEditTextPassword, textInputEditTextEmail;
     TextView textViewSignup;
@@ -48,7 +48,7 @@ public class LogIn extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         textViewSignup.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), SignUp.class);
+            Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
             startActivity(intent);
             finish();
         });
@@ -60,11 +60,11 @@ public class LogIn extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(LogIn.this, "User loged in", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogInActivity.this, "User loged in", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
                     } else {
-                        Toast.makeText(LogIn.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogInActivity.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
