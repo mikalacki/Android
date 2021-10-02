@@ -11,7 +11,7 @@
         <entry key="app/src/main/res/drawable/ic_picture_background.xml" value="0.37734375" />
         <entry key="app/src/main/res/layout-v21/fragment_home.xml" value="0.36" />
         <entry key="app/src/main/res/layout-v28/activity_main.xml" value="0.23541666666666666" />
-        <entry key="app/src/main/res/layout/activity_add_comment.xml" value="0.23541666666666666" />
+        <entry key="app/src/main/res/layout/activity_add_comment.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.2046875" />
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.365625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2046875" />
@@ -29,6 +29,8 @@
         <entry key="app/src/main/res/layout/header_notifications.xml" value="0.5358778625954198" />
         <entry key="app/src/main/res/layout/info.xml" value="0.5" />
         <entry key="app/src/main/res/layout/notification.xml" value="0.5358778625954198" />
+        <entry key="app/src/main/res/layout/notification_item.xml" value="0.353125" />
+        <entry key="app/src/main/res/layout/review_item.xml" value="0.353125" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.37734375" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.37734375" />

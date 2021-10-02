@@ -7,35 +7,26 @@
     android:padding="10dp"
     tools:context=".AddCommentActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/comment"
-        android:textSize="25sp"
-        android:padding="10dp"
-        android:id="@+id/txt">
 
-    </TextView>
 
     <EditText
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/txt"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:hint="@string/your_comment"
         android:id="@+id/newComment"
         android:text=""
         android:textSize="25sp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_margin="10dp">
 
     </EditText>
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/newComment"

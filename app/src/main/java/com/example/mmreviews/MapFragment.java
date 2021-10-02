@@ -75,7 +75,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(MapFragment.this);
 
-        Places.initialize(getContext(), "AIzaSyBrMKegKdBUux7lqesVWXDX5_esR_XGQVU");
+        Places.initialize(getContext(), "GOOGLE_API_KEY");
 
 
         // Construct a FusedLocationProviderClient.

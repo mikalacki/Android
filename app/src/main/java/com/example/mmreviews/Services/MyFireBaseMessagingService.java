@@ -27,10 +27,9 @@ public class MyFireBaseMessagingService extends FirebaseMessagingService {
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        //int resourceImage = getResources().getIdentifier(remoteMessage.getNotification().getIcon(), "drawable", getPackageName());
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "NEW_REVIEW_CHANNEL");
         builder.setSmallIcon(R.drawable.ic_baseline_notifications_active_24);
-        //builder.setColor(getColor(R.color.imdb_yellow_color));
         Intent resultIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, resultIntent, 0);
 

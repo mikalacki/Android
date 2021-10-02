@@ -44,7 +44,7 @@ public class SearchFragment extends Fragment {
         btnCard = view.findViewById(R.id.btnCard);
 
 
-        Places.initialize(getContext(), "AIzaSyBrMKegKdBUux7lqesVWXDX5_esR_XGQVU");
+        Places.initialize(getContext(), "GOOGLE_API_KEY");
 
         search.setFocusable(false);
         search.setOnClickListener(v -> {

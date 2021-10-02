@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class NotificationSender {
 
-    String userFcmToken;
+    String userToken;
     String title;
     String body;
     Context mContext;
@@ -29,10 +29,10 @@ public class NotificationSender {
 
     private RequestQueue requestQueue;
     private final String postUrl = "https://fcm.googleapis.com/fcm/send";
-    private final String fcmServerKey ="AAAAdqJMEf8:APA91bFoPXpf7_QICpgDyF3xAR5189H7_6B4LSt00K1OC8WqoYhaECrG0TfMTz4L9a6LJLr_FKynpjs3dE_B18d4CFHPtWmH68ZixwpTtq1ZxLoEeahSJkjCq2g2FC8pkUwfEIQlXWzC";
+    private final String fcmServerKey ="FIREBASE_SERVER_KEY";
 
-    public NotificationSender(String userFcmToken, String title, String body, Context mContext, Activity mActivity) {
-        this.userFcmToken = userFcmToken;
+    public NotificationSender(String userToken, String title, String body, Context mContext, Activity mActivity) {
+        this.userToken = userToken;
         this.title = title;
         this.body = body;
         this.mContext = mContext;
@@ -46,7 +46,7 @@ public class NotificationSender {
         requestQueue = Volley.newRequestQueue(mActivity);
         JSONObject mainObj = new JSONObject();
         try {
-            mainObj.put("to", userFcmToken);
+            mainObj.put("to", userToken);
             JSONObject notiObject = new JSONObject();
             notiObject.put("title", title);
             notiObject.put("body", body);
@@ -57,11 +57,8 @@ public class NotificationSender {
                 public void onResponse(JSONObject response) {
                     // notification sent
                 }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    // notification not sent
-                }
+            }, error -> {
+                // notification not sent
             }) {
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
