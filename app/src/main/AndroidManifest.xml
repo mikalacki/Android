@@ -71,7 +71,7 @@
             android:resource="@color/black" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBrMKegKdBUux7lqesVWXDX5_esR_XGQVU" />
+            android:value="API_KEY" />
 
         <activity android:name=".MainActivity" />
     </application>
