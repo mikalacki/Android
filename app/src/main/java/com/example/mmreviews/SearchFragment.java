@@ -50,6 +50,13 @@ public class SearchFragment extends Fragment {
         search.setOnClickListener(v -> {
             List<Place.Field> fieldList = Arrays.asList(Place.Field.NAME);
 
+            // ovaj forResult je deprecated a i koristis ga iz fragmenta
+            // logiku bi trebalo da prebaacis u activity pa da activity za koji je vezan
+            // ovaj fragment radi posao. Evo jednog primera:
+            // https://github.com/jocelin09/FragmentCommunication/tree/master/app/src/main/java/com/jocelinthomas/fragmentcommunication
+            // ima ih more na internetu svakako pa proguglaaj
+            // ono sto je sad glavna stvar i sto google gura jeste da koristis ViewModel klasu
+            // koja radi logiku i koristis je u okviru fragmenta i activitya. Pogledaj i to malo
             Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fieldList).build(getActivity());
             startActivityForResult(intent, 100);
 
@@ -68,7 +75,8 @@ public class SearchFragment extends Fragment {
             search.setText(place.getAddress());
             btnCard.setText(place.getName());
 
-
+            // ove stvari je lepse kad izbacis u poseban metod
+            // pa mu prosledis parametar koji ce da metne u intent :)
             btnCard.setOnClickListener(v -> {
                 Intent intent = new Intent(getActivity(), PlaceReviewsActivity.class);
                 intent.putExtra("placeName", place.getName());

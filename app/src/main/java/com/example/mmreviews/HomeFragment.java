@@ -59,6 +59,8 @@ public class HomeFragment extends Fragment {
                     String username = userProfile.getUsername();
                     String email = userProfile.getEmail();
 
+                    // ove gore promenljive su ti visak, nema potrebe da kreiras dodatne
+                    // objekte, odmah bubnes ovo iz userProfile na textview
                     fullNameTextView.setText(fullName);
                     usernameTextView.setText(username);
                     emailTextView.setText(email);

@@ -1,5 +1,6 @@
 package com.example.mmreviews;
 
+// opusteno moze da ide u paket sa svim ostalim modelima, lepsa struktura
 public class PlaceReview {
 
     String placeName;

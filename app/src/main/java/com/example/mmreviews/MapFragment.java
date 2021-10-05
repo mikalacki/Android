@@ -83,6 +83,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         return view;
     }
 
+    // saveInstanceState ide u paru sa restoreInstanceState
+    // tako da ovo sto si sacuvao ovde nema smisla ako ga ne procitas
+    // nazad u mMap u onRestoreInstanceState
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         if (mMap != null) {

@@ -26,6 +26,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
+// mozda ne bi bilo lose da kad malo zategnes kod, prebacis sve u kotlin;
+// kotlin je sada manje vise svuda glavni jezik za Android; sem ako ne radis u nekoj
+// legacy app pisanoj u javi, kotlin je glavni favorit svakako tako dda bi bilo dobro
+// da mozda pocnes sto pre dad se upoznajes sa njim
+
+// P.S. ovaj komentar je ovde jer mi to palo na pamet sad :D
+
+
 public class EditActivity extends AppCompatActivity {
 
     public static final String TAG = "TAG";

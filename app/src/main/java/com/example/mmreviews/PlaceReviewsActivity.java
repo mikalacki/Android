@@ -20,6 +20,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * Kod je generalno malo ruznjikavo formatiran :D
+ * Nista strasno, moj je bio isti takav u pocetku hah
+ * Evo predloga da ubacis formater u studio pa da ti on to lepo poslaze:
+ * https://metova.com/how-to-import-the-official-android-code-style/
+ * I za ovo ima more alternativa, uglavnom ide na ono sto se tebi dopadne
+ * ili sto se tim dogovori da ce da koristi kao formatter
+ */
 public class PlaceReviewsActivity extends AppCompatActivity {
 
     TextView placeName;
@@ -49,6 +57,12 @@ public class PlaceReviewsActivity extends AppCompatActivity {
         placeName.setText(place);
 
         recyclerView = findViewById(R.id.cardList);
+        /*
+        Bilo bi dobro da imas centralno mesto, jednu klasu koja ti upravlja bazom
+        pa da ne moras na sto mesta da imas hardcoded string kao ovaj PlaceReviews.
+        Mozes da zamotas ceo firebaseDatabase u svoju neku klasu koju onda koristis
+        svuda a na jednom mestu imas samo kod koji zaista radi sa bazom
+         */
         database = FirebaseDatabase.getInstance().getReference("PlaceReviews");
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -56,6 +56,12 @@ public class LogInActivity extends AppCompatActivity {
 
         buttonLogin.setOnClickListener(v -> {
 
+            /*
+            Ovde bi bilo lepo (ili bilo gde drugo gde uzimas podatke) da proveris
+            da li su podaci korektni pre nego sto izvrsis API poziv. U ovom slucaju,
+            to moze biti da email nije prazan string, da je dobro formatiran itd.
+            Slicno i za sifru, tipa da nije prazna
+             */
             fAuth.signInWithEmailAndPassword(textInputEditTextEmail.getText().toString(), textInputEditTextPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull @NotNull Task<AuthResult> task) {

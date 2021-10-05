@@ -50,7 +50,7 @@ android {
 
 
 dependencies {
-
+// da li ti stvarno trebaju svi ovi dependencies?
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

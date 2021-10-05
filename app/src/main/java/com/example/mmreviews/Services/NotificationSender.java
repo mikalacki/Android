@@ -43,6 +43,10 @@ public class NotificationSender {
 
     public void sendNotifications() {
 
+        // gde si volley iskopao hah ja ga koristio pre 10 godina :D
+        // anyways, za izvrsavanje http poziva sada je mainstream
+        // ili retrofit ili okhttp3 (ili kombinacija). Nije nista lose u volley
+        // radi verovatno posao samo su ove dve naprednije u mnogo aspekata. Pogledaj svakako
         requestQueue = Volley.newRequestQueue(mActivity);
         JSONObject mainObj = new JSONObject();
         try {

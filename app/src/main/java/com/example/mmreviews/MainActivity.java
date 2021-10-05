@@ -13,7 +13,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
-
+// previse praznog prostora :D
 
 
     @Override
@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     private final BottomNavigationView.OnNavigationItemSelectedListener navListener =
             item -> {
+        // procitaj ovo a vezano za nacin na koji se kreiraju fragmenti:
+                // https://stackoverflow.com/questions/9245408/best-practice-for-instantiating-a-new-android-fragment
                 Fragment selectedFragment = null;
                 switch (item.getItemId()){
                     case R.id.nav_home:

@@ -44,6 +44,8 @@ public class MyAdapterNotifications extends RecyclerView.Adapter<MyAdapterNotifi
         return list.size();
     }
 
+    // ovo verovatno ne mora da bude public, izbegavaj da exposujes
+    // stvari koje se ne koriste dalje od klase gde su definisane
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView user, comment, place;

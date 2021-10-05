@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
+import com.example.mmreviews.databinding.ActivitySignUpBinding;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,6 +23,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
+    // vidim da si u gradle ubacio viewBinding ali ne vidim da ga koristis
+    // kada ga dodas u gradle on sam izgenerise binding klasu za tebe
+    // pa ne moras da koristis findViewById. Prostudiraj binding jos malo
+    // evo primera dole
+    ActivitySignUpBinding binding;
     TextInputEditText textInputEditTextFullname, textInputEditTextUsername, textInputEditTextPassword, textInputEditTextEmail;
     Button buttonRegister;
     TextView textViewLogin;
@@ -32,6 +37,9 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        binding = ActivitySignUpBinding.inflate(getLayoutInflater());
+        binding.email.setText("bla bla bla");
 
         textInputEditTextUsername = findViewById(R.id.usernameSignup);
         textInputEditTextFullname = findViewById(R.id.fullName);

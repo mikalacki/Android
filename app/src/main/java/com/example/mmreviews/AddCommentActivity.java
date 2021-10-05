@@ -19,6 +19,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/*
+I ovde lepim komentar jer sam se sad setio:
+https://www.amazon.com/dp/0201633612
+Nabavi ovu knjigu, uz malo googlanja mozes da nadjes i pdf (hehe)
+Ovo ce ti trebaati kroz karijeru i dobro je da se upoznas sa dizajn
+paternima
+ */
+
 public class AddCommentActivity extends AppCompatActivity {
 
     Button btnCancel, btnAdd;
