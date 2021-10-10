@@ -1,6 +1,4 @@
-package com.example.mmreviews;
-
-
+package com.example.mmreviews.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,8 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
+import com.example.mmreviews.R;
+import com.example.mmreviews.models.User;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -48,8 +46,6 @@ public class SignUpActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-
-
 
         buttonRegister.setOnClickListener(v ->
         {

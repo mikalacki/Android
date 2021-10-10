@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
 
         android:orientation="vertical"
-        tools:context=".MainActivity"
+        tools:context=".activities.MainActivity"
         android:id="@+id/home"
         android:backgroundTint="@color/black"
         android:foregroundTint="@color/black">

@@ -16,25 +16,25 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MMReviews"
-        android:usesCleartextTraffic="true">
+        >
         <activity
-            android:name=".AddCommentActivity"
+            android:name=".activities.AddCommentActivity"
             android:exported="true" />
         <activity
-            android:name=".PlaceReviewsActivity"
+            android:name=".activities.PlaceReviewsActivity"
             android:exported="true" />
         <activity
-            android:name=".EditActivity"
+            android:name=".activities.EditActivity"
             android:exported="true" />
         <activity
-            android:name=".LogInActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
+            android:name=".activities.LogInActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,7 +42,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".Services.MyFireBaseMessagingService"
+            android:name=".services.MyFireBaseMessagingService"
             android:permission="TODO"
             android:exported="true"
             tools:ignore="ExportedService">
@@ -51,7 +51,7 @@
             </intent-filter>
         </service>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activities.SignUpActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -73,7 +73,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="API_KEY" />
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.MainActivity" />
     </application>
 
 

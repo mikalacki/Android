@@ -1,4 +1,4 @@
-package com.example.mmreviews.Services;
+package com.example.mmreviews.services;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -7,13 +7,12 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
-import com.example.mmreviews.MainActivity;
+import com.example.mmreviews.activities.MainActivity;
 import com.example.mmreviews.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;

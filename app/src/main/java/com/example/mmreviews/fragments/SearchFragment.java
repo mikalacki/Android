@@ -1,4 +1,4 @@
-package com.example.mmreviews;
+package com.example.mmreviews.fragments;
 
 
 import static android.app.Activity.RESULT_OK;
@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.mmreviews.activities.PlaceReviewsActivity;
+import com.example.mmreviews.R;
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
@@ -43,7 +45,6 @@ public class SearchFragment extends Fragment {
         search = view.findViewById(R.id.search);
         btnCard = view.findViewById(R.id.btnCard);
 
-
         Places.initialize(getContext(), "GOOGLE_API_KEY");
 
         search.setFocusable(false);
@@ -54,7 +55,6 @@ public class SearchFragment extends Fragment {
             startActivityForResult(intent, 100);
 
         });
-
         return view;
     }
 
@@ -67,7 +67,6 @@ public class SearchFragment extends Fragment {
 
             search.setText(place.getAddress());
             btnCard.setText(place.getName());
-
 
             btnCard.setOnClickListener(v -> {
                 Intent intent = new Intent(getActivity(), PlaceReviewsActivity.class);

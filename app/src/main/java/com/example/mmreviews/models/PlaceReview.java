@@ -1,12 +1,9 @@
-package com.example.mmreviews;
+package com.example.mmreviews.models;
 
 public class PlaceReview {
 
-    String placeName;
+    String placeName, comment, user;
     float rating;
-    String user;
-    String comment;
-
 
     public PlaceReview(){
 

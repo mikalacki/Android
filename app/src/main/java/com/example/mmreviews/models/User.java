@@ -1,4 +1,4 @@
-package com.example.mmreviews;
+package com.example.mmreviews.models;
 
 
 public class User {
@@ -6,7 +6,6 @@ public class User {
     private String username;
     private String fullName;
     private String email;
-
 
     public User(){
 
@@ -18,7 +17,6 @@ public class User {
         this.email = email;
 
     }
-
 
     public String getUsername() {
         return username;

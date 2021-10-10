@@ -1,4 +1,4 @@
-package com.example.mmreviews;
+package com.example.mmreviews.fragments;
 
 
 import android.content.pm.PackageManager;
@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.mmreviews.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,8 +26,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
-
-import java.util.List;
 
 
 public class MapFragment extends Fragment implements OnMapReadyCallback {
@@ -39,8 +38,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     // The entry point to the Fused Location Provider.
     private FusedLocationProviderClient fusedLocationProviderClient;
 
-    // A default location (Sydney, Australia) and default zoom to use when location permission is
-    // not granted.
     private final LatLng defaultLocation = new LatLng(45.26, 19.83);
     private static final int DEFAULT_ZOOM = 17;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
@@ -50,18 +47,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     // location retrieved by the Fused Location Provider.
     private Location lastKnownLocation;
 
-    // Keys for storing activity state.
-    // [START maps_current_place_state_keys]
-    private static final String KEY_CAMERA_POSITION = "camera_position";
-    private static final String KEY_LOCATION = "location";
-    // [END maps_current_place_state_keys]
-
-    // Used for selecting the current place.
-
-    private String[] likelyPlaceNames;
-    private String[] likelyPlaceAddresses;
-    private List[] likelyPlaceAttributions;
-    private LatLng[] likelyPlaceLatLngs;
 
 
     @Nullable
@@ -70,37 +55,23 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         view = inflater.inflate(R.layout.fragment_map, container, false);
 
-
         SupportMapFragment mapFragment = (SupportMapFragment) this.getChildFragmentManager()
                 .findFragmentById(R.id.map);
+        assert mapFragment != null;
         mapFragment.getMapAsync(MapFragment.this);
 
         Places.initialize(getContext(), "GOOGLE_API_KEY");
 
-
         // Construct a FusedLocationProviderClient.
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity());
         return view;
     }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        if (mMap != null) {
-            outState.putParcelable(KEY_CAMERA_POSITION, mMap.getCameraPosition());
-            outState.putParcelable(KEY_LOCATION, lastKnownLocation);
-        }
-        super.onSaveInstanceState(outState);
-    }
-
-
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
 
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-
 
         getLocationPermission();
         // [END_EXCLUDE]

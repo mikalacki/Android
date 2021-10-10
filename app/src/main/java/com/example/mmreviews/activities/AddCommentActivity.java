@@ -1,4 +1,4 @@
-package com.example.mmreviews;
+package com.example.mmreviews.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,10 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
-import com.example.mmreviews.Services.NotificationSender;
+import com.example.mmreviews.R;
+import com.example.mmreviews.models.PlaceReview;
+import com.example.mmreviews.models.User;
+import com.example.mmreviews.services.NotificationSender;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -45,6 +48,7 @@ public class AddCommentActivity extends AppCompatActivity {
 
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             reference = FirebaseDatabase.getInstance().getReference("Users");
+            assert user != null;
             userID = user.getUid();
 
             reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {

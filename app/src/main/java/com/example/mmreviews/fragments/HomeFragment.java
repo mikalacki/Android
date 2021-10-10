@@ -1,4 +1,4 @@
-package com.example.mmreviews;
+package com.example.mmreviews.fragments;
 
 
 import android.content.Intent;
@@ -13,6 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.mmreviews.activities.EditActivity;
+import com.example.mmreviews.activities.LogInActivity;
+import com.example.mmreviews.R;
+import com.example.mmreviews.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -41,6 +45,7 @@ public class HomeFragment extends Fragment {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
+        assert user != null;
         userID = user.getUid();
 
         final TextView fullNameTextView = view.findViewById(R.id.fullNameProfile);
@@ -55,13 +60,9 @@ public class HomeFragment extends Fragment {
                 User userProfile = snapshot.getValue(User.class);
 
                 if (userProfile != null) {
-                    String fullName = userProfile.getFullName();
-                    String username = userProfile.getUsername();
-                    String email = userProfile.getEmail();
-
-                    fullNameTextView.setText(fullName);
-                    usernameTextView.setText(username);
-                    emailTextView.setText(email);
+                    fullNameTextView.setText(userProfile.getFullName());
+                    usernameTextView.setText(userProfile.getUsername());
+                    emailTextView.setText(userProfile.getEmail());
                 }
             }
 

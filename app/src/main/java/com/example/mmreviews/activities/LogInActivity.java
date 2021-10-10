@@ -1,4 +1,4 @@
-package com.example.mmreviews;
+package com.example.mmreviews.activities;
 
 import androidx.annotation.NonNull;
 
@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mmreviews.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -24,7 +25,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import org.jetbrains.annotations.NotNull;
 
-
 public class LogInActivity extends AppCompatActivity {
 
     TextInputEditText textInputEditTextPassword, textInputEditTextEmail;
@@ -33,12 +33,10 @@ public class LogInActivity extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth fAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-
 
         textInputEditTextEmail = findViewById(R.id.emailLogin);
         textInputEditTextPassword = findViewById(R.id.passwordLogin);
@@ -53,24 +51,22 @@ public class LogInActivity extends AppCompatActivity {
             finish();
         });
 
-
         buttonLogin.setOnClickListener(v -> {
 
-            fAuth.signInWithEmailAndPassword(textInputEditTextEmail.getText().toString(), textInputEditTextPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(LogInActivity.this, "User loged in", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        finish();
-                    } else {
-                        Toast.makeText(LogInActivity.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            if(textInputEditTextEmail.getText().toString().isEmpty() || textInputEditTextPassword.getText().toString().isEmpty()) {
+                fAuth.signInWithEmailAndPassword(textInputEditTextEmail.getText().toString(), textInputEditTextPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(LogInActivity.this, "User loged in", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            finish();
+                        } else {
+                            Toast.makeText(LogInActivity.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
-                }
-            });
-
+                });
+            }
         });
-
-
     }
 }

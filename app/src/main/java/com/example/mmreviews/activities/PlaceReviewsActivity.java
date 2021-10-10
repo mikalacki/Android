@@ -1,4 +1,4 @@
-package com.example.mmreviews;
+package com.example.mmreviews.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.mmreviews.R;
+import com.example.mmreviews.adapters.MyAdapter;
+import com.example.mmreviews.models.PlaceReview;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -40,7 +43,6 @@ public class PlaceReviewsActivity extends AppCompatActivity {
         addComment = findViewById(R.id.addComment);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-
         assert user != null;
         String userID = user.getEmail();
 
@@ -58,8 +60,6 @@ public class PlaceReviewsActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(this, list);
         recyclerView.setAdapter(myAdapter);
 
-
-
         database.orderByChild("placeName").equalTo(place).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -68,8 +68,6 @@ public class PlaceReviewsActivity extends AppCompatActivity {
                     PlaceReview placeReview1 = dataSnapshot.getValue(PlaceReview.class);
                     list.add(placeReview1);
                 }
-
-
                 myAdapter.notifyDataSetChanged();
             }
 
@@ -86,9 +84,5 @@ public class PlaceReviewsActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-
-
-
-
     }
 }

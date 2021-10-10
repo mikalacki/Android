@@ -1,4 +1,4 @@
-package com.example.mmreviews;
+package com.example.mmreviews.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,14 +7,16 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
+import com.example.mmreviews.R;
+import com.example.mmreviews.fragments.HomeFragment;
+import com.example.mmreviews.fragments.MapFragment;
+import com.example.mmreviews.fragments.NotificationFragment;
+import com.example.mmreviews.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

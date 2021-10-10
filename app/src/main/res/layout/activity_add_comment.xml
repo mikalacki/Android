@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".AddCommentActivity">
+    tools:context=".activities.AddCommentActivity">
 
 
 
@@ -17,6 +17,8 @@
         android:hint="@string/your_comment"
         android:id="@+id/newComment"
         android:text=""
+        android:inputType="text"
+        android:autofillHints=""
         android:textSize="25sp"
         android:padding="10dp"
         android:layout_margin="10dp">
